@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101b3d" />
+    <meta
+      name="description"
+      content="브라우저에서 즐기는 3이닝 캐주얼 1인용 야구 게임, 덕아웃 히어로즈"
+    />
+    <title>덕아웃 히어로즈</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="덕아웃 히어로즈 처음으로">
+          <span class="brand-ball" aria-hidden="true"></span>
+          <span>덕아웃 히어로즈</span>
+        </a>
+        <div class="topbar-actions">
+          <span id="statusText" class="status-text">난이도를 선택하고 경기를 시작하세요</span>
+          <button id="muteButton" class="icon-button" type="button" aria-pressed="false">
+            <span aria-hidden="true">♪</span>
+            사운드 켜짐
+          </button>
+        </div>
+      </header>
+
+      <section class="game-card" aria-labelledby="gameTitle">
+        <h1 id="gameTitle" class="sr-only">덕아웃 히어로즈 야구 게임</h1>
+        <div class="canvas-wrap">
+          <canvas
+            id="gameCanvas"
+            width="960"
+            height="540"
+            tabindex="0"
+            aria-label="야구 게임 화면. 방향키, 스페이스바, 숫자 1에서 3 키를 사용합니다."
+          ></canvas>
+          <div id="setupOverlay" class="setup-overlay" hidden></div>
+        </div>
+      </section>
+
+      <section class="control-panel" aria-label="게임 조작 안내">
+        <div class="control-copy">
+          <p class="eyebrow">KEYBOARD CONTROL</p>
+          <p id="controlHint" class="control-hint">
+            Enter를 눌러 팀과 라인업을 선택하세요.
+          </p>
+        </div>
+        <div class="key-groups" aria-hidden="true">
+          <div class="key-group"><kbd>↑</kbd><kbd>↓</kbd><span>조준</span></div>
+          <div class="key-group"><kbd>Space</kbd><span>스윙 · 투구</span></div>
+          <div class="key-group"><kbd>P</kbd><span>일시정지</span></div>
+          <div class="key-group"><kbd>M</kbd><span>음소거</span></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
